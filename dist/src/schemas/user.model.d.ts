@@ -26,8 +26,13 @@
 interface IUser {
     username: string;
     password: string;
+    google: {
+        id: {
+            type: string;
+        };
+    };
 }
 declare const UserModel: import("mongoose").Model<IUser, {}, {}, {}, import("mongoose").Document<unknown, {}, IUser> & Omit<IUser & {
     _id: import("mongoose").Types.ObjectId;
 }, never>, any>;
-export { UserModel };
+export default UserModel;

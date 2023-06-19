@@ -13,7 +13,7 @@ const PORT = 3000;
 const app = (0, express_1.default)();
 app.set("view engine", "ejs");
 app.set('views', './src/views');
-const DB_URL = 'mongodb+srv://ngphong0708:6V9bKO9eMLh8BHEE@cluster0.wrtrzrl.mongodb.net/Manager_CLient';
+const DB_URL = 'mongodb+srv://ngphong0708:6V9bKO9eMLh8BHEE@cluster0.wrtrzrl.mongodb.net/Manager_client';
 mongoose_1.default.connect(DB_URL)
     .then(() => console.log('DB Connected!'))
     .catch(error => console.log('DB connection error:', error.message));
@@ -30,6 +30,6 @@ app.use(passport_1.default.session());
 app.use("/auth", authRouter_1.default);
 app.use(express_1.default.urlencoded({ extended: false }));
 app.listen(PORT, () => {
-    console.log("App running on port: " + PORT);
+    console.log("http://localhost:" + PORT);
 });
 //# sourceMappingURL=index.js.map
